@@ -2,6 +2,17 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131360734-1"></script>
+	<script>
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+
+  	gtag('config', 'UA-131360734-1');
+	</script>
+
+
 	<title>I AM SO GOOD</title>
 	<style type="text/css">
 		.background
@@ -24,15 +35,30 @@
   			width: auto; height: auto; z-index: -100;
 		}		/*in order to make the video fill the screen*/
 
+		.textbox
+		{
+			position: relative;
+			top: 200px;
+			width: 100%;
+		}
+
 		.text
 		{
 			text-align: center;
 			font-size: 100px;
 			color: white;
 			position: relative;
-			top: 200px;
-			width: 100%;
+			left: 400px;
+			display: inline-block;
 			opacity: 0.6;
+		}
+
+		.button
+		{
+			position: relative;
+			display: inline-block;
+			color: white;
+			cursor:pointer;
 		}
 
 		body
@@ -45,18 +71,70 @@
 		}
 	</style>
 
+	<script type="text/javascript">
+		var pressnumA=1;
+		var pressnumB=1;
+
+		function changeback()
+		{
+			pressnumA++;
+			if (pressnumA%2==0)
+			{
+				//alert("yes");
+				tempback1=document.getElementById('nowback');
+				tempback1.setAttribute("src","http://pjo6ujq1d.bkt.clouddn.com/kairuibest.mp4");
+				document.getElementById('dance').load();
+			}
+			else
+			{
+				tempback2=document.getElementById('nowback');
+				tempback2.setAttribute("src","http://pjo6ujq1d.bkt.clouddn.com/smallest.mp4");
+				document.getElementById('dance').load();
+			}
+			
+		}
+
+		function showme()
+		{
+			alert("今天也是元气满满的一天呢 I am so good today. contact me mikewiki666@gmail.com");
+		}
+
+		function changemusic()
+		{
+			pressnumB++;
+			if (pressnumB%2==0)
+			{
+				document.getElementById('music').src="http://pjo6ujq1d.bkt.clouddn.com/whatislove.mp3";
+				document.getElementById('music').load();
+			}
+			else
+			{
+				document.getElementById('music').src="http://pjo6ujq1d.bkt.clouddn.com/cutshooting_stars.mp3";
+				document.getElementById('music').load();
+			}
+			
+		}
+
+	</script>
+
 </head>
 <body>
 	<div>
 		<div class="background">
 			<video autoplay loop id="dance">
-				<source src="http://pjo6ujq1d.bkt.clouddn.com/smallest.mp4" type="video/mp4">
+				<source id="nowback" src="http://pjo6ujq1d.bkt.clouddn.com/smallest.mp4" type="video/mp4">
 			</video>
 
-			<audio autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="http://pjo6ujq1d.bkt.clouddn.com/cutshooting_stars.mp3">
+			<audio id="music" autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="http://pjo6ujq1d.bkt.clouddn.com/cutshooting_stars.mp3">
 			</audio>
-
-			<div class="text"><strong>I AM SO GOOD</strong></div>
+			<div class="textbox">
+				<div class="text"><strong>I AM SO</strong></div>
+				<div class="text"><strong>&nbsp;G</strong></div>
+				<div class="button text" onclick="changeback()"><strong>O</strong></div>
+				<div class="button text" onclick="changemusic()"><strong>O</strong></div>
+				<div class="button text" onclick="showme()"><strong>D</strong></div>
+			</div>
+			
 		</div>
 	</div>
 	<!--hi 你好，这个网站是我偶然听到shooting star这首歌，然后就中毒了
@@ -64,6 +142,10 @@
 		由于刚刚开始学CSS JS这些，所以做的并不好，见谅啦！
 		12月18日凌晨更新：背景GIF图太大，加载很缓慢，所以替换成了一个2Mb多的视频，清晰度也有了提升
 		（制作G视频的过程略艰辛，先是裁切了视频，而后将视频倒放再与正放的拼接，卡顿便不明显，有无限循环的效果-->
+		<!-- 12月24日下午更新：在OOD三个字母上增加了按钮，可以切换背景视频和背景音乐，目前还只有两种选择。
+			加载慢的问题依然无法克服，背景视频的大小已经不能再小了，音乐可能还可以压缩一下，不过国外的网站访问慢是在所难免的
+			后面待解决的问题就是手机端以及个别浏览器的适配问题，还有字母按钮可能会加一点动态的效果（干，这么乐色的一个破站被我讲的好像很正经）
+			任何建议可以email我：mikewiki666@gmail.com(这样把邮箱写出来不会有什么风险吧 嘿嘿）-->
 
 </body>
 </html>
